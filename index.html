@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador QRGB</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador QRGB</h1>
+        <form id="qrgb-form" enctype="multipart/form-data">
+            <label for="red_data">Texto para capa roja:</label>
+            <input type="text" id="red_data" name="red_data" required>
+
+            <label for="green_data">Texto para capa verde:</label>
+            <input type="text" id="green_data" name="green_data" required>
+
+            <label for="blue_data">Texto para capa azul:</label>
+            <input type="text" id="blue_data" name="blue_data" required>
+
+            <label for="logo">Seleccionar Logo:</label>
+            <input type="file" id="logo" name="logo" accept=".png, .jpg, .jpeg" required>
+
+            <button type="submit">Generar QRGB</button>
+        </form>
+
+        <form id="decode-form" enctype="multipart/form-data">
+            <label for="qr_file">Seleccionar QR para decodificar:</label>
+            <input type="file" id="qr_file" name="qr_file" accept=".png" required>
+            <button type="submit">Decodificar QRGB</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
